@@ -30,4 +30,15 @@ public class Money {
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
+
+
+    public Money multiply(BigDecimal amountToMultiply)
+    {
+        return new Money(currency,amount.multiply(amountToMultiply));
+    }
+
+    public Money subtract(Money money)
+    {
+        return new Money(currency,amount.subtract(money.getAmount()));
+    }
 }
